@@ -1,0 +1,101 @@
+#tilecontent {
+    height: 80vh;
+}
+.tileblock{
+    height: 10vh;
+    padding: 1vh 2vh;
+    margin: 2.7vh 0vh 0vh 0vh;
+    border-radius: 4px 4px 0px 0px;
+    background-color: #dfdff9;
+    box-shadow: 1px 0px 3px #f7f7f7;
+}
+.subblocktile{
+    display: inline-block;
+    float: left;
+    width: 25%;
+    height: 10vh;
+    padding: 3vh 4px 0px 4px;
+    align-items: center;
+    align-content: center;
+    color: #fff;
+    font-weight: 500;
+    box-shadow: 1px 3px 3px #f7f7f7;
+}
+#warehouseDetails{ display: none}
+#row-1-warehouse-details{
+    margin: 3vh 0vh;
+}
+#row-2-warehouse-details{
+    margin: 3vh 0vh;
+}
+#scoreGauge svg{
+    width: 100%;
+    height: 100%;
+}
+#capacityGauge svg{
+    width: 100%;
+    height: 100%;
+}
+#table-1-warehouse tr{
+    border-radius: none;
+}
+#table-1-warehouse tr th{
+    border-radius: none;
+    background-color: #19d760;
+    color: #fff;
+}
+#table-1-warehouse tr td{
+    border-radius: none;
+}
+#table-2-warehouse tr{
+    border-radius: none;
+}
+#table-2-warehouse tr th{
+    border-radius: none;
+    background-color: #d7d13e;
+    color: #fff;
+}
+#table-2-warehouse tr td{
+    border-radius: none;
+}
+#table-3-warehouse tr{
+    border-radius: none;
+}
+#table-3-warehouse tr th{
+    border-radius: none;
+    background-color: #d75a42;
+    color: #fff;
+}
+#table-3-warehouse tr td{
+    border-radius: none;
+}
+#row-3-warehouse-details{
+    margin: 3vh 0vh;
+}
+#row-4-warehouse-details{
+    margin: 3vh 0vh;
+}
+#chartMoisture{
+    width: 100%;
+    height: 100%;
+}#chartTemperature{
+     width: 100%;
+     height: 100%;
+ }#chartHumidity{
+    width: 100%;
+    height: 100%;
+}
+#chartMoisture svg{
+    width: 100%;
+    height: 100%;
+}#chartTemperature svg{
+     width: 100%;
+     height: 100%;
+ }#chartHumidity svg{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+

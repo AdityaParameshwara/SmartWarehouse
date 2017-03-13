@@ -1,0 +1,165 @@
+<div class="row" id="dashboardcontent">
+  <div class="col-md-5">
+    <div id="tilecontent" style=" margin-left: 15px;">
+      <div ng-repeat="warehouse in warehouseCount">
+        <div class="row tileblock">
+          <strong>{{warehouse.warehouseDetails.warehouseName}}</strong>
+          <br/>
+          <strong>Storage Capacity: {{warehouse.warehouseDetails.capacity}} tonnes</strong>
+        </div>
+        <div class="row">
+          <div class="subblocktile" style="background-color: #6052e2; border-bottom-left-radius: 4px;">
+            <div align="center">Total Containers</div>
+            <div align="center">{{warehouse.totalCount}}</div>
+          </div>
+          <div class="subblocktile" style="background-color: #58d463">
+            <div align="center">Safe</div>
+            <div align="center">{{warehouse.safe}}</div>
+          </div>
+          <div class="subblocktile" style="background-color: #d9d036">
+            <div align="center">Unsafe</div>
+            <div align="center">{{warehouse.warn}}</div>
+          </div>
+          <div class="subblocktile" style="background-color: #df2f22; border-bottom-right-radius: 4px">
+            <div align="center">Damaged</div>
+            <div align="center">{{warehouse.breached}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div id="map">
+      <svg></svg>
+    </div>
+  </div>
+</div>
+
+<div id="warehouseDetails">
+  <div class="row" id="row-1-warehouse-details">
+    <div class="col-md-1"></div>
+    <div class="col-md-5" style="background-color: #e6e6e6;">
+      <h4>Region: <span id="region"></span></h4>
+      <h4>Season: Monsoon</h4>
+    </div>
+    <div class="col-md-5" style="background-color: #e6e6e6;">
+      <h4>Total Containers: {{siloCount}}</h4>
+      <h4>Capacity: <span id="capacity"></span> tonnes</h4>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+  <div class="row" id="row-2-warehouse-details">
+    <div class="col-md-1"></div>
+    <div class="col-md-3" style="height: 100%; background-color: #a9f5ab; border-radius: 4px">
+      <div id="warehouseId" align="center" style="vertical-align: middle">
+        <h4>Warehouse Id:</h4><h4 id="warehouseIdHead">{{warehouse}}</h4>
+      </div>
+      <div id="premiunblock" align="center" style="vertical-align: middle">
+        <h1>Rs. {{premium}}</h1>
+      </div>
+      <div id="premiunblockhead" align="center" style="vertical-align: middle">
+        <h4>Premium Amount</h4>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div id="scoreGauge"></div>
+    </div>
+    <div class="col-md-4 table-responsive">
+      <table class="table table-bordered" id="table-1-warehouse">
+        <tr>
+          <th>Grain</th>
+          <th>Quantity (tonnes)</th>
+          <th>Duration (months)</th>
+        </tr>
+        <tr ng-repeat="warehouse in warehousesGrain">
+          <td>{{warehouse.grain}}</td>
+          <td>{{warehouse.qty}}</td>
+          <td>{{randomDuration()}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+  <div class="row" id="row-3-warehouse-details">
+    <div class="col-md-1"></div>
+    <div class="col-md-10" >
+      <table class="table table-hover" id="table-2-warehouse">
+        <tr>
+          <th>NodeId</th>
+          <th>Sensor Breach</th>
+          <th>Grain</th>
+          <th>Quantity</th>
+          <th>Cause</th>
+        </tr>
+        <tr ng-repeat="row in redArr" data-toggle="modal" data-target="#myModal" ng-click="showModal(row)">
+          <td>{{row.details.nodeId}}</td>
+          <td>{{row.details.sensor}}</td>
+          <td>{{row.grain}}</td>
+          <td>{{row.qty}}</td>
+          <td>{{row.details.description}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+  <div class="row" class="row-4-warehouse-details">
+    <div class="col-md-1"></div>
+    <div class="col-md-10" >
+      <table class="table table-hover" id="table-3-warehouse">
+        <tr>
+          <th>NodeId</th>
+          <th>Sensor Breach</th>
+          <th>Grain</th>
+          <th>Quantity</th>
+          <th>Cause</th>
+        </tr>
+        <tr ng-repeat="row in orangeArr">
+          <td>{{row.details.nodeId}}</td>
+          <td>{{row.details.sensor}}</td>
+          <td>{{row.grain}}</td>
+          <td>{{row.qty}}</td>
+          <td>{{row.details.description}}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+
+</div>
+
+
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Sensor Data</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <div id="chartMoisture">
+            </div>
+          </div>
+        </div><div class="row">
+          <div class="col-md-12">
+            <div id="chartTemperature"></div>
+          </div>
+        </div><div class="row">
+          <div class="col-md-12">
+            <div id="chartHumidity"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
